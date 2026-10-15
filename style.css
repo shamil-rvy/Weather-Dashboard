@@ -1,0 +1,285 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: lightblue;
+    min-height: 100vh;
+    padding: 20px;
+    color: #222;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+header h1 {
+    font-size: 30px;
+}
+
+#themeBtn {
+    border: none;
+    background: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Search */
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#cityInput {
+    flex: 1;
+    padding: 14px;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+#searchBtn {
+    padding: 14px 22px;
+    border: none;
+    border-radius: 10px;
+    background: #2563eb;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#searchBtn:hover {
+    background: #1d4ed8;
+}
+
+/* Error */
+
+#errorMsg {
+    color: #b91c1c;
+    text-align: center;
+    margin: 10px;
+    font-weight: bold;
+}
+
+/* Loading */
+
+#loading {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    margin: 20px;
+}
+
+/* Current Weather */
+
+.weather-card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.weather-card h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.weather-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#weatherIcon {
+    width: 100px;
+}
+
+#temperature {
+    font-size: 40px;
+}
+
+#description {
+    text-transform: capitalize;
+    color: #555;
+    margin-top: 5px;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px 0;
+}
+
+#favoriteBtn {
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    background: #f59e0b;
+    color: white;
+    cursor: pointer;
+}
+
+#favoriteBtn:hover {
+    background: #d97706;
+}
+
+/* Forecast */
+
+.forecast-section {
+    margin-bottom: 30px;
+}
+
+.forecast-section h2,
+.favorites-section h2 {
+    margin-bottom: 15px;
+}
+
+.forecast-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 15px;
+}
+
+.forecast-card {
+    background: white;
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.forecast-card img {
+    width: 60px;
+}
+
+.forecast-card h3 {
+    margin-bottom: 8px;
+}
+
+/* Favorites */
+
+.favorites-section {
+    margin-bottom: 30px;
+}
+
+#favoritesList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.favorite-city {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.favorite-city:hover {
+    background: #e0f2fe;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+    body {
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    .search-section {
+        flex-direction: column;
+    }
+
+    #searchBtn {
+        width: 100%;
+    }
+
+    .weather-info {
+        flex-direction: column;
+    }
+
+    .details {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .forecast-container {
+        grid-template-columns: 1fr;
+    }
+
+    .forecast-card {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+/* Dark Mode */
+
+body.dark {
+    background: #111827;
+    color: white;
+}
+
+body.dark header h1 {
+    color: white;
+}
+
+body.dark .weather-card {
+    background: #1f2937;
+    color: white;
+}
+
+body.dark .forecast-card {
+    background: #1f2937;
+    color: white;
+}
+
+body.dark .favorite-city {
+    background: #1f2937;
+    color: white;
+}
+
+body.dark #cityInput {
+    background: #374151;
+    color: white;
+}
+
+body.dark #cityInput::placeholder {
+    color: #ddd;
+}
+
+body.dark #themeBtn {
+    background: #374151;
+    color: white;
+}
+
+body.dark #description {
+    color: white;
+}
